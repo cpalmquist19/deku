@@ -12,7 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 # Load environment variables from .env file
 load_dotenv()
 
-TODAY = date.today().strftime("%m-%d-%Y")
+TODAY = date.today().strftime("%Y%m%d")
 NOW = datetime.datetime.now()
 
 # Get environment variables
@@ -25,10 +25,14 @@ RUNS_FOLDER = os.path.join(ROOT_DIR, "runs")
 if not os.path.exists(RUNS_FOLDER):
     os.makedirs(RUNS_FOLDER)
 
+TODAY_FOLDER = os.path.join(RUNS_FOLDER, TODAY)
+if not os.path.exists(TODAY_FOLDER):
+    os.makedirs(TODAY_FOLDER)
+
 NOW = datetime.datetime.now()
 RUNTIME = NOW.strftime("%Y%m%d%H%M%S")
 
-RUN_FOLDER = os.path.join(RUNS_FOLDER, RUNTIME)
+RUN_FOLDER = os.path.join(TODAY_FOLDER, RUNTIME)
 if not os.path.exists(RUN_FOLDER):
     os.makedirs(RUN_FOLDER)
 
