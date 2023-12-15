@@ -12,6 +12,8 @@ from selenium.webdriver.support import expected_conditions as EC
 # Load environment variables from .env file
 load_dotenv()
 
+SITE_UNDER_TEST = os.getenv("DEKU_SITE_UNDER_TEST")
+
 TODAY = date.today().strftime("%Y%m%d")
 NOW = datetime.datetime.now()
 
