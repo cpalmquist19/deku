@@ -16,8 +16,8 @@ TODAY = date.today().strftime("%m-%d-%Y")
 NOW = datetime.datetime.now()
 
 # Get environment variables
-USERNAME = os.getenv("USERNAME")
-PASSWORD = os.getenv("PASSWORD")
+USERNAME = os.getenv("DEKU_USERNAME")
+PASSWORD = os.getenv("DEKU_PASSWORD")
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
